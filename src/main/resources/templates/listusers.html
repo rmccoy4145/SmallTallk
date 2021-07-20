@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Small Talk</title>
+</head>
+<body>
+<p>
+<tr th:if="${users.empty}">
+    <td colspan="2"> No Users Available </td>
+</tr>
+<tr th:each="user : ${users}">
+    <td><span th:text="${user.name}"> UserName: </span></td>
+</tr>
+</p>
+</body>
+</html>
