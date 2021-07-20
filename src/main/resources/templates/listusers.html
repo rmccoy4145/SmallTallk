@@ -6,12 +6,13 @@
 </head>
 <body>
 <p>
+    <th>Users<th/>
 <tr th:if="${users.empty}">
     <td colspan="2"> No Users Available </td>
 </tr>
-<tr th:each="user : ${users}">
-    <td><span th:text="${user.name}"> UserName: </span></td>
-</tr>
+<p th:each="user : ${users}">
+<tr><td><label>Name:</label><span th:text="${user.name}"></span></td><tr/>
+</p>
 </p>
 </body>
 </html>

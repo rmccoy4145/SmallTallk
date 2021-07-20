@@ -21,9 +21,7 @@ public class UserService {
         return users;
     }
 
-    public User create(String name) {
-        User user = new User();
-        user.setName(name);
+    public User create(User user) {
         return userRepo.save(user);
     }
 
