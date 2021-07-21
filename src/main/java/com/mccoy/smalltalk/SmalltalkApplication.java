@@ -14,7 +14,6 @@ public class SmalltalkApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmalltalkApplication.class, args);
-		System.out.println("classpath is ---" + System.getProperty("java.class.path"));
 	}
 
 }
