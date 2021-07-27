@@ -12,12 +12,10 @@ public class TalkingPointService {
     @Autowired
     TalkingPointRepository talkingPointRepository;
 
-//    TODO: optomize this so it doesnt have to pull all before getting a random element
-//    this is error prone
+//    TODO: get total to make max random dynamic
     public TalkingPoint getRandom() {
         Random rnd = new Random();
-        long idUsed = rnd.nextInt(4 + 1) + 1;
-        System.out.println("ID used --" + idUsed);
+        long idUsed = rnd.nextInt(4) + 1;
         return talkingPointRepository.findById(idUsed).get();
     }
 
