@@ -3,7 +3,7 @@ package com.mccoy.smalltalk.model;
 import javax.persistence.*;
 
 @Entity
-public class User {
+public class TalkingPoint {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

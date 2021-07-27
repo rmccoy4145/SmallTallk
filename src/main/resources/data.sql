@@ -1,0 +1,4 @@
+INSERT INTO TALKING_POINT (id, name) VALUES (1, 'Food');
+INSERT INTO TALKING_POINT (id, name) VALUES (2, 'Movies');
+INSERT INTO TALKING_POINT (id, name) VALUES (3, 'Video Games');
+INSERT INTO TALKING_POINT (id, name) VALUES (4, 'Pets');
