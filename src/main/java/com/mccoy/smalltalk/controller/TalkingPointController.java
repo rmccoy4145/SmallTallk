@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class WelcomeController {
+public class TalkingPointController {
     @Autowired
     TalkingPointService talkingPointService;
 
