@@ -92,7 +92,11 @@
         <div>
             <h3 class="float-md-start mb-0" th:text="${appName}"></h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link active" aria-current="page" href="logout">Logout</a>
+                <a class="nav-text">
+                    <form method="post" action="/logout">
+                        <button class="btn btn-secondary btn-sm btn-block" type="submit">Logout</button>
+                    </form>
+                </a>
             </nav>
         </div>
     </header>
