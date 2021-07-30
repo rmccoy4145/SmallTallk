@@ -103,12 +103,36 @@
 
     <main class="px-3">
         <h1>Small Talk Admin Panel</h1>
-        <p class="lead">Coming soon...</p>
-<!--        <p class="lead">-->
-<!--            <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-white">New Talking Point</a></p>-->
-<!--        </br>-->
-<!--        <p> Lets talk about <span th:text="${talkingPoint}" /></p>-->
-
+        <div class="row">
+            <div class="col">
+                <h3>Saved Talking Points</h3>
+        <div class="row">
+            <div class="col fw-bold">ID</div>
+            <div class="col fw-bold">NAME</div>
+        </div>
+        <div class="row" th:each="point: ${talkingPoints}">
+            <div class="col" th:text="${point.id}"/>
+            <div class="col" th:text="${point.name}"/>
+        </div>
+            </div>
+            <div class="col">
+                <h3>Create New Talking Point</h3>
+                <form method="post" th:action="@{/admin/createNewTalkingPoint}" action="#" th:object="${newTalkingPoint}">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">NAME</span>
+                        <input type="text" id="name" th:field="*{name}" name="name" class="form-control" required="" size="50">
+                        <!--            <input name="_csrf" type="hidden" value="46b7f77e-f46d-4895-a15b-a8c5cbd52bd6">-->
+                    </div>
+                    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+                        Failed to create new Talking Point!
+                    </div>
+                    <div class="alert alert-success" role="alert" th:if="${feedback}">
+                        <span th:text="${feedback}" />
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer class="mt-auto text-white-50">

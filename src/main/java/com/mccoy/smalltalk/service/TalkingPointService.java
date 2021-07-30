@@ -5,7 +5,7 @@ import com.mccoy.smalltalk.repository.TalkingPointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Random;
+import java.util.*;
 
 @Component
 public class TalkingPointService {
@@ -17,6 +17,13 @@ public class TalkingPointService {
         Random rnd = new Random();
         long idUsed = rnd.nextInt(4) + 1;
         return talkingPointRepository.findById(idUsed).get();
+    }
+
+    public List<TalkingPoint> getAll() {
+        List<TalkingPoint> points = new ArrayList<>();
+        talkingPointRepository.findAll().forEach((point) -> points.add(point));
+        Collections.sort(points);
+        return points;
     }
 
     public TalkingPoint getFirst() {
